@@ -1,11 +1,25 @@
 package main
 
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+
 func main() {
-	for i := 0; i <= 100; i = i + 1 {
-		if i%2 == 0 {
-			println("%d-偶数", i)
-		} else {
-			println("%d-奇数", i)
-		}
+	t := time.Now().UnixNano()
+	rand.Seed(t)
+	s := rand.Intn(6)
+	fmt.Println(s)
+
+	switch s + 1 {
+	case 1:
+		fmt.Println("凶")
+	case 2, 3:
+		fmt.Println("吉")
+	case 4, 5:
+		fmt.Println("中吉")
+	case 6:
+		fmt.Println("大吉")
 	}
 }
